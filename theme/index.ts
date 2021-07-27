@@ -61,18 +61,18 @@ export const theme = {
     default: 4,
   },
   variants: {
-    card: {
-      bg: "white",
-      border: "card",
-      borderRadius: "default",
-      boxShadow: "card",
-      warning: {
-        bg: "warning",
-        border: "card",
-        borderRadius: "default",
-        boxShadow: "card",
-      },
-    },
+    // card: {
+    //   bg: "white",
+    //   border: "card",
+    //   borderRadius: "default",
+    //   boxShadow: "card",
+    //   warning: {
+    //     bg: "warning",
+    //     border: "card",
+    //     borderRadius: "default",
+    //     boxShadow: "card",
+    //   },
+    // },
   },
   shadows: {
     // button: "0 1px 1px 0 #161d250c, inset 0 2px 0 0 #ffffff0c",
