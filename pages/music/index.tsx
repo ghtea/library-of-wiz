@@ -45,7 +45,7 @@ export default function Music({
 
       <Flex>
 
-        <Flex>
+        <Flex sx={{flexDirection: "row", flexWrap: "wrap"}}>
           {albumList?.map((item, index)=>{
 
             const name = item.properties.Name?.title[0]
@@ -54,7 +54,7 @@ export default function Music({
             const src = key ? `${notionFileUrlPrefix}/${key}.jpg` : undefined;
             
             return(
-              <Box key={`album-${item.id}`}>
+              <Box key={`album-${item.id}`} sx={{lineHeight: 0, margin: "4px"}}>
                 {src &&
                   <Image width={"300px"} height={"300px"} alt={`album cover of ${name}`} src={src}/>
                 }
