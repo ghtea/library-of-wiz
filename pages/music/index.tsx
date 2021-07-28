@@ -15,7 +15,7 @@ export default function Music({
   database
 }:MusicProps) {
   
-  const albumList = useMemo(()=>{ return database?.results }, [database]);
+  const albumList = useMemo(()=>{ return database?.results || [] }, [database]);
 
   useEffect(()=>{
     console.log(albumList)
@@ -33,7 +33,7 @@ export default function Music({
 
         <Flex>
           {albumList?.map((eachAlbum, eachIndex)=>{
-            const src = eachAlbum.properties["Cover URI"] ? eachAlbum.properties["Cover URI"]["url"] : "" || "";
+            const src = ""
             return(
               <Box key={`album-${eachAlbum.id}`}>
                 {src &&
