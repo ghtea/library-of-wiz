@@ -6,16 +6,24 @@ import { Button, Flex, Box } from "components/atoms"
 import { notion } from "libraries/notion"
 import Head from "next/head"
 import Image from "next/image"
+import { Page } from "@notionhq/client/build/src/api-types"
+import { MusicAlbumPropertyValueMap } from "libraries/notion/types"
 
 export type MusicProps = {
   database: DatabasesQueryResponse | null;
+  notionFileUrlPrefix?: string;
+}
+
+export type MusicAlbum = Page & {
+  properties: MusicAlbumPropertyValueMap; // PropertyValueMap
 }
 
 export default function Music({
-  database
+  database,
+  notionFileUrlPrefix
 }:MusicProps) {
   
-  const albumList = useMemo(()=>{ return database?.results || [] }, [database]);
+  const albumList: MusicAlbum[] = useMemo(()=>{ return database?.results || [] }, [database]);
 
   useEffect(()=>{
     console.log(albumList)
@@ -32,15 +40,21 @@ export default function Music({
       <Flex>
 
         <Flex>
-          {albumList?.map((eachAlbum, eachIndex)=>{
-            const src = ""
+          {albumList?.map((item, index)=>{
+
+            const name = item.properties.Name?.title[0]
+            const key = item.properties.Key?.rich_text[0]?.plain_text
+
+            const src = key ? `${notionFileUrlPrefix}/${key}.jpg` : undefined;
+            
             return(
-              <Box key={`album-${eachAlbum.id}`}>
+              <Box key={`album-${item.id}`}>
                 {src &&
-                  <Image width={"300px"} height={"300px"} alt={`album cover of ${eachAlbum.properties["Name"]}`} src={src}/>
+                  <Image width={"300px"} height={"300px"} alt={`album cover of ${name}`} src={src}/>
                 }
               </Box>
-          )})}
+            )
+          })}
         </Flex>
         
       </Flex>
@@ -53,10 +67,15 @@ export async function getServerSideProps() {
   
   try {
     const database = await notion.databases.query({ database_id: process.env.NOTION_MUSIC_DB_ID || "" });
-    return { props: { database } }
+    return { props: { 
+      database,
+      notionFileUrlPrefix: process.env.NOTION_FILE_URL_PREFIX,
+    } }
   }
   catch {
-    return { props: { database: null } }
+    return { props: { 
+      database: null, 
+      notionFileUrlPrefix: process.env.NOTION_FILE_URL_PREFIX } }
   }
 }
 
