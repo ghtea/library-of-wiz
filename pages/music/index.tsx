@@ -23,7 +23,13 @@ export default function Music({
   notionFileUrlPrefix
 }:MusicProps) {
   
-  const albumList: MusicAlbum[] = useMemo(()=>{ return database?.results || [] }, [database]);
+  const albumList: MusicAlbum[] = useMemo(()=>{ 
+    const newAlbumList = database?.results.filter((item: MusicAlbum) => {
+      const name = item.properties.Name?.title[0]?.plain_text;
+      return name ? true : false
+    })
+    return newAlbumList || [] 
+  }, [database]);
 
   useEffect(()=>{
     console.log(albumList)
