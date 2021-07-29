@@ -1,6 +1,7 @@
 import buttons from "./buttons";
 import colors from "./color";
 import forms from "./forms";
+import sizes from "./sizes";
 import { background, breakpoints, space } from "./others";
 import text from "./text";
 
@@ -94,6 +95,8 @@ export const theme = {
     // redBadge: `solid 1px ${colors["red-300"]}`,
   },
   sizes: {
+    
+    ...sizes,
     // modal: {
     //   width: {
     //     small: "440px",
@@ -112,6 +115,14 @@ export const theme = {
   borderStyles: {},
   zIndices: {},
   transitions: {},
+  styles: {
+    pre : {
+      "body": {
+        margin: "0 !important",
+        padding: "0 !important",
+      }
+    },
+  },
 };
 
 export default theme;

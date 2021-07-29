@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-import { Flex, Box } from "components/atoms"
+import { Flex, Box, Button } from "components/atoms"
+import sizes from "theme/sizes"
 
 export type TemplateAProps = {
   
 }
+
 
 export const TemplateA: React.FunctionComponent<TemplateAProps> = ({
     children
@@ -12,21 +14,27 @@ export const TemplateA: React.FunctionComponent<TemplateAProps> = ({
   return (
     <Flex>
 
-        <Box sx={{display: ["none", null, "unset", null]}}>
+      <Box sx={{display: ["unset", null, "none", null], width: "100%"}}>
+        <Flex sx={{height: sizes.templateA.topNav, width: "100%", flexDirection: "row", justifyContent: "space-between", borderBottomStyle: "solid", borderBottomWidth: "2px", borderColor: "black"}} >
+          <Box> W </Box>
+          <Box>
             <Flex>
-                big device
+              <Button> V </Button>
             </Flex>
-        </Box>
+          </Box>
+          <Box> ? </Box>
+        </Flex>
+      </Box>
 
-        <Box sx={{display: ["unset", null, "none", null]}}>
-            <Flex>
-                small device
-            </Flex>
-        </Box>
+      <Box sx={{display: ["none", null, "unset", null]}}>
+        <Flex>
+          big device
+        </Flex>
+      </Box>
         
-        <Box>
-            {children}
-        </Box>
+      <Box>
+        {children}
+      </Box>
 
     </Flex>
   )
