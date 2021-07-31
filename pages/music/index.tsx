@@ -53,7 +53,7 @@ export default function Music({
             const name = item.properties.Name?.title[0]
             const key = item.properties.Key?.rich_text[0]?.plain_text
 
-            const src = key ? `${notionFileUrlPrefix}/${key}.jpg` : undefined;
+            const src = key ? `${notionFileUrlPrefix}/music-album-covers/${key}.jpg` : undefined;
             
             return(
               <Box key={`album-${item.id}`} sx={{lineHeight: 0, margin: "4px"}}>
