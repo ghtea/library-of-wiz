@@ -1,6 +1,6 @@
 import { Box, BoxProps } from "components/atoms"
 import { ReactSVG } from 'react-svg'
-import colors from "theme/colors";
+import {ColorKey} from "theme/colors";
 
 export type IconProps = BoxProps & {
   src: string;

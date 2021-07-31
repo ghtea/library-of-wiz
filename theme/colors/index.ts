@@ -29,11 +29,11 @@ const colors = {
   
   // "alternative": commonColors["gray-500"],
 
-  modes: {
-    dark: {
+  // modes: {
+  //   dark: {
       
-    }
-  }
+  //   }
+  // }
 
 };
 

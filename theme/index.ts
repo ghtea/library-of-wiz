@@ -85,7 +85,7 @@ export const theme = {
     // box: "0 1px 3px 0 rgba(0, 0, 0, 0.04)",
   },
   borders: {
-    default: `1px solid ${colors["gray-100"]}`,
+    //default: `1px solid ${colors["gray-100"]}`,
     // buttonHover: "1px solid rgba(0, 0, 0, 0.3)",
     // buttonFlatHover: "1px solid rgba(0, 0, 0, 0.05)",
     // card: `solid 1px ${colors["cool-gray-300"]}`,
