@@ -4,7 +4,7 @@ import { Flex, Box, Button } from "components/atoms"
 import { IconButton } from "components/molecules"
 
 import sizes from "theme/sizes"
-import colors from "theme/colors"
+import {ColorKey} from "theme/colors"
 
 export type TemplateAProps = {
   
@@ -14,11 +14,11 @@ export type TemplateAProps = {
 export const TemplateA: React.FunctionComponent<TemplateAProps> = ({
   children
 }) => {
-  return ( // color: colors["@text"]
-    <Flex sx={{backgroundColor: colors["@background"], color: colors["@text"]}}>
+  return ( 
+    <Flex sx={{backgroundColor: ColorKey.BACKGROUND, color: ColorKey.TEXT}}>
 
       <Box sx={{display: ["unset", null, "none", null], width: "100%"}}>
-        <Flex sx={{height: sizes.templateA.topNav.height, width: "100%", flexDirection: "row", justifyContent: "space-between", borderBottomStyle: "solid", borderBottomWidth: "2px", borderColor: "black"}} >
+        <Flex sx={{height: sizes["templateA.topNav.height"], width: "100%", flexDirection: "row", justifyContent: "space-between", borderBottomStyle: "solid", borderBottomWidth: "2px", borderColor: "black"}} >
           <Box> W </Box>
           <Box>
             <Flex>

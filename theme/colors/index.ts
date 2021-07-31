@@ -1,9 +1,13 @@
 import commonColors from "./commonColors";
 
+export enum ColorKey {
+  "BACKGROUND" = "background",
+  "TEXT" = "text",
+}
+
 const colors = {
-  ...commonColors,
-  "@background": "#ffffff",
-  "@text": "#18181B",
+  [ColorKey.BACKGROUND] : "#ffffff",
+  [ColorKey.TEXT]: "#18181B",
 
   // "primary": commonColors["blue-500"],
   // "secondary": commonColors["green-500"],
@@ -27,11 +31,11 @@ const colors = {
 
   modes: {
     dark: {
-      ...commonColors,
       
     }
   }
 
 };
+
 
 export default colors;

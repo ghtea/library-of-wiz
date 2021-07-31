@@ -12,6 +12,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
   const realSx = useSx({
     background: "none",
+    cursor: "pointer",
     ...sx,
   })
 

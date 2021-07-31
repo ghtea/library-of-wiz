@@ -15,7 +15,7 @@ export const Icon: React.FunctionComponent<IconProps> = ({
   return (
     <Box {...rest} sx={{
       size: "24px",
-      color: colors["@text"],
+      color: ColorKey.TEXT,
       ...sx
     }} > 
       <ReactSVG src={src} style={{width: "100%", height: "100%"}} />  
