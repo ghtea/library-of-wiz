@@ -6,16 +6,16 @@ export type ButtonProps = Omit<ThemeUiButtonProps, "sx"> & {
 };
 
 export const Button: React.FunctionComponent<ButtonProps> = ({
-    sx,
-    ...rest
+  sx,
+  ...rest
 }) => {
 
-    const realSx = useSx({
-        backgroundColor: "none",
-        ...sx,
-    })
+  const realSx = useSx({
+    background: "none",
+    ...sx,
+  })
 
-    return ( 
-      <ThemeUiButton {...rest} sx={realSx} />
-    );
+  return ( 
+    <ThemeUiButton {...rest} sx={realSx} />
+  );
 }

@@ -12,7 +12,7 @@ export type TemplateAProps = {
 
 
 export const TemplateA: React.FunctionComponent<TemplateAProps> = ({
-    children
+  children
 }) => {
   return ( // color: colors["@text"]
     <Flex sx={{backgroundColor: colors["@background"], color: colors["@text"]}}>

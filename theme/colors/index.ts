@@ -3,7 +3,7 @@ import commonColors from "./commonColors";
 const colors = {
   ...commonColors,
   "@background": "#ffffff",
-  "@text": "red",
+  "@text": "#18181B",
 
   // "primary": commonColors["blue-500"],
   // "secondary": commonColors["green-500"],

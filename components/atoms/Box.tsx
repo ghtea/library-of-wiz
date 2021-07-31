@@ -7,13 +7,13 @@ export type BoxProps = Omit<ThemeUiBoxProps, "sx"> & {
 
 
 export const Box: React.FunctionComponent<BoxProps> = ({
-    sx,
-    ...rest
+  sx,
+  ...rest
 }) => {
 
-    const realSx = useSx(sx)
+  const realSx = useSx(sx)
 
-    return (
-      <ThemeUiBox {...rest} sx={realSx} />
-    )
+  return (
+    <ThemeUiBox {...rest} sx={realSx} />
+  )
 };
