@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
 import { DatabasesQueryResponse } from "@notionhq/client/build/src/api-endpoints"
-import { Flex, Box } from "components/atoms"
+import { Flex, Box } from "components-old/atoms"
 import { TemplateA } from "components/templates"
 
 import { notion } from "libraries/notion"

@@ -2,8 +2,9 @@ import commonColors from "./commonColors";
 
 const colors = {
   ...commonColors,
+  "@background": "#ffffff",
+  "@text": "red",
 
-  "@#ffffff": "#ffffff",
   // "primary": commonColors["blue-500"],
   // "secondary": commonColors["green-500"],
   // "disabled": commonColors["gray-100"],
@@ -28,7 +29,6 @@ const colors = {
     dark: {
       ...commonColors,
       
-      "@#ffffff": "#111111"
     }
   }
 

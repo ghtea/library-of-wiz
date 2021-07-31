@@ -1,5 +1,5 @@
 import buttons from "./buttons";
-import colors from "./color";
+import colors from "./colors";
 import forms from "./forms";
 import sizes from "./sizes";
 import { background, breakpoints, space } from "./others";
