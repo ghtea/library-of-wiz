@@ -1,5 +1,5 @@
+import {Sx,useSx} from "libraries/theme-ui"
 import { Button as ThemeUiButton, ButtonProps as ThemeUiButtonProps } from "theme-ui"
-import {useSx, Sx} from "libraries/theme-ui"
 
 export type ButtonProps = Omit<ThemeUiButtonProps, "sx"> & {
     sx?: Sx
@@ -11,8 +11,13 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
 
   const realSx = useSx({
+    display: "inline-flex",
+    justifyContent: "center",
+    alignItems: "center",
     background: "none",
     cursor: "pointer",
+    px: 1,
+    py: 1,
     ...sx,
   })
 

@@ -1,5 +1,5 @@
+import {Sx,useSx} from "libraries/theme-ui"
 import { Flex as ThemeUiFlex, FlexProps as ThemeUiFlexProps } from "theme-ui"
-import {useSx, Sx} from "libraries/theme-ui"
 
 export type FlexProps = ThemeUiFlexProps & {
   sx?: Sx

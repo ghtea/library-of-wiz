@@ -1,14 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
 import { DatabasesQueryResponse } from "@notionhq/client/build/src/api-endpoints"
-import { Flex, Box } from "components-old/atoms"
+import { Page } from "@notionhq/client/build/src/api-types"
 import { TemplateA } from "components/templates"
-
+import { Box,Flex } from "components-old/atoms"
 import { notion } from "libraries/notion"
+import { MusicAlbumPropertyValueMap } from "libraries/notion/types"
 import Head from "next/head"
 import Image from "next/image"
-import { Page } from "@notionhq/client/build/src/api-types"
-import { MusicAlbumPropertyValueMap } from "libraries/notion/types"
 
 
 export type MusicProps = {
@@ -72,8 +71,8 @@ export default function Music({
 }
 
 export async function getServerSideProps() {
-  
-  try {
+   
+  try { 
     const database = await notion.databases.query({ database_id: process.env.NOTION_MUSIC_DB_ID || "" });
     return { props: { 
       database,

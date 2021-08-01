@@ -18,6 +18,8 @@ export const IconButton: React.FunctionComponent<IconButtonProps> = ({
         display: "inline-flex",
         justifyContent: "center",
         alignItems: "center",
+        px: 1,
+        py: 1,
         ...sx,
       }}
     >  

@@ -1,8 +1,9 @@
 import type { AppProps } from 'next/app'
-import 'normalize.css';
-import './fonts.css';
 import theme from 'theme';
 import { ThemeProvider} from "theme-ui";
+
+import 'normalize.css';
+import './fonts.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

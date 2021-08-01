@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-import { Flex, Box, Button } from "components/atoms"
+import { Box, Button,Flex } from "components/atoms"
 import { IconButton } from "components/molecules"
-
-import sizes from "theme/sizes"
 import {ColorKey} from "theme/colors"
+import sizes from "theme/sizes"
 
 export type TemplateAProps = {
   
